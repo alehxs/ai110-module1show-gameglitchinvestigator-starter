@@ -1,3 +1,4 @@
+# FIX: Extracted from app.py into logic_utils.py using Claude Code agent mode
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
     if difficulty == "Easy":
@@ -9,6 +10,7 @@ def get_range_for_difficulty(difficulty: str):
     return 1, 100
 
 
+# FIX: Added input validation and decimal handling with Claude Code agent mode
 def parse_guess(raw: str):
     """
     Parse user input into an int guess.
@@ -30,6 +32,7 @@ def parse_guess(raw: str):
     return True, value, None
 
 
+# FIX: Added TypeError fallback for type mismatches using Claude Code agent mode
 def check_guess(guess, secret):
     """
     Compare guess to secret and return (outcome, message).
@@ -53,6 +56,7 @@ def check_guess(guess, secret):
         return "Too Low", "📉 Go LOWER!"
 
 
+# FIX: Refactored scoring logic into its own function using Claude Code agent mode
 def update_score(current_score: int, outcome: str, attempt_number: int):
     """Update score based on outcome and attempt number."""
     if outcome == "Win":

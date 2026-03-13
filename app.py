@@ -86,6 +86,7 @@ if st.session_state.status != "playing":
 if submit:
     st.session_state.attempts += 1
 
+    # FIX: Replaced inline parsing with parse_guess from logic_utils using Claude Code agent mode
     ok, guess_int, err = parse_guess(raw_guess)
 
     if not ok:
